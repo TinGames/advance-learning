@@ -40,7 +40,7 @@ app.engine('.html', require('ejs').__express);
 app.set('views', __dirname + '/');
 app.set('view engine', 'html');
 
-app.set('port', 5000);
+app.set('port', process.env.port || 5000);
 app.use('/static', express.static(__dirname + '/static'));
 // Routing
 app.get('/', function(request, response) {
@@ -126,7 +126,7 @@ app.post('/game_control', function(request, response) {
 
 
 // Starts the server.
-server.listen(5000, function() {
+server.listen(process.env.port || 5000, function() {
   console.log('Starting server on port 5000');
 });
 
