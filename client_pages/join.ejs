@@ -1,0 +1,20 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="/styles" media="screen" /><head>
+<title>Advance - Join</title>
+</head>
+<%- include header.ejs %>
+
+<div id="centerdiv">
+<div style="width: 400px; text-align: center; margin: 0 auto;">
+<br>
+<h1 style="font-size: 70px; margin-bottom: 30px;">Join A Game!</h1>
+<form action="/play" method="POST">
+<input id="id" name="id"type="text" placeholder="Code" required>
+<input id="name" name="name"type="text" placeholder="Name" required>
+
+<input class="button-reverse"type="submit" value="Join!">
+</form>
+</div>
+</div>
+</html>

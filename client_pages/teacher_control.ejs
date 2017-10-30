@@ -1,0 +1,63 @@
+<html>
+<head>
+<script src="/socket.io/socket.io.js"></script>
+<link rel="stylesheet" type="text/css" href="/styles" media="screen" />
+</head>
+<%- include header.ejs %>
+<input id="userName"type="hidden" value= <%= userName %>>
+<div style="width: 100%; height: 100%; border-top: 5px solid var(--color_1);">
+
+<div style="text-align: center;float:left; display: block; overflow: hidden; border-right: 5px solid var(--color_1); width: 25%; height: 100%; margin-right: -5px">
+<h1>Current Games</h1>
+<div id="current_games">
+
+</div>
+
+</div>
+<div style="width: 75%; float: right;overflow: hidden; border-bottom: 5px solid var(--color_1)">
+<h1 style="margin-left: 30px; color: var(--color_1);font-size: 40px; margin-bottom: 10px; margin-top: 10px;">Teacher Name</h1>
+</div>
+
+<div style="width: 75%; height: 100%; overflow: hidden; float:right">
+<h1 style="margin-left: 30px;"> Word Sets</h1>
+
+<div id = "set_space" style="width: 100%; height: 100%;">
+<div id = "template"style="padding-bottom: 25px; padding-top: 25px;max-width: 90%; width: 90%; margin-left: 30px; border-left: 10px solid var(--color_1); box-shadow: 0px 5px 5px black;display: block; overflow: hidden;"> 
+
+<div style="max-width: 50%; width: 50%;display: inline-block; overflow: hidden;margin-bottom: 0px; padding-bottom: 0px;">
+<h1 id="category_name"style="font-size: 35px; margin-left: 30px; padding-top: 0px; padding-bottom: 0px;margin-bottom: 0px;">L'ordinateur</h1>
+</div>
+
+
+
+<div class="start_container">
+<div class="dropdown">
+<form>
+<input class="dropbtn"type="button" value="Start Game">
+</form>
+ <div class="dropdown-content">
+      <a id="popup"href="#" onclick="create_popup_game()">Pop Up!</a>
+    
+	  
+   </div>
+</div>
+</div>
+<div style="margin-bottom: 0px; padding-bottom: 0px; margin-top: 0px;">
+<h1 id= "term_num"style="font-size: 15px; margin-left: 30px;">72 Terms</h1>
+</div>
+
+</div>
+
+
+</div>
+</div>
+</div>
+
+
+<div id="redirect">
+<form action="/game_control" method="POST" id="redir"> 
+<input type="hidden" id="code"name="code"> 
+</form>
+</div>
+<script type="text/javascript" src="/teacher_js"></script>
+</html>
